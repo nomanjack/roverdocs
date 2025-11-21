@@ -1,0 +1,254 @@
+export const Container = ({ children }) => {
+  return (
+    <div className="px-1">
+      {children}
+    </div>
+  )
+}
+
+export const Title = ({ children }) => {
+  return (
+    <div className="text-neutral-900 dark:text-neutral-100 text-2xl tracking-tight">
+      {children}
+    </div>
+  )
+}
+
+export const LearnTitle = ({ children }) => {
+  return (
+    <div className="text-neutral-900 dark:text-neutral-100 text-2xl font-bold">
+      {children}
+    </div>
+  )
+}
+
+export const TitleLink = ({ children, href }) => {
+  return (
+    <a
+      href={href}
+      className="text-neutral-900 dark:text-neutral-100 font-bold flex items-center gap-1 hover:opacity-70 transition-opacity"
+    >
+      {children} <Icon icon="arrow-right" size="14" />
+    </a>
+  )
+}
+
+export const VideoLink = ({ children, href }) => {
+  return (
+    <a
+      href={href}
+      className="text-neutral-900 dark:text-neutral-100 font-bold flex items-center gap-1 hover:opacity-70 transition-opacity"
+    >
+      {children} <Icon icon="arrow-up-right" size="14" />
+    </a>
+  )
+}
+
+export const QuickstartItem = ({ title, description, icon, href }) => {
+  return (
+    <a className="group flex items-start gap-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 p-3 rounded-xl transition-colors" href={href}>
+      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg border border-black/[0.08] dark:border-white/[0.08] bg-neutral-50 dark:bg-neutral-800">
+        {icon}
+      </div>
+      <div>
+        <div className="font-semibold text-sm text-neutral-900 dark:text-neutral-100">{title}</div>
+        <div className="mt-1 text-neutral-600 dark:text-neutral-400 text-sm">{description}</div>
+      </div>
+    </a>
+  )
+}
+
+export const ImageCard = ({ img, href, title, description }) => {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="group">
+      <div className="flex flex-col gap-4 rounded-xl">
+        <div className="w-full h-full overflow-hidden rounded-xl">
+          <img
+            src={img}
+            className="w-full h-full object-cover transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+            alt={title}
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:opacity-70 transition-opacity">
+            {title}
+          </h2>
+          <p className="text-neutral-600 dark:text-neutral-400 font-medium text-lg">
+            {description}
+          </p>
+        </div>
+      </div>
+    </a>
+  );
+};
+
+export const WaitlistButton = ({ href = '#', label = 'Join waitlist' }) => {
+  return (
+    <a
+      href={href}
+      className="
+        mt-4
+        inline-flex items-center gap-2
+        px-4 py-2 rounded-md text-sm font-medium
+        border
+        border-neutral-900 text-neutral-100 bg-neutral-900 
+        hover:bg-neutral-800 hover:text-neutral-100
+        transition-colors
+        no-underline
+        dark:border-neutral-700 dark:text-neutral-900 dark:bg-neutral-800 
+        dark:hover:bg-neutral-700 dark:hover:text-neutral-100
+      "
+      style={{ maxHeight: 40 }}
+    >
+      {label}
+    </a>
+  );
+};
+
+export const CaseStudy = ({
+  title,
+  subtitle,
+  icon,
+  image,
+  imageAlt = '',
+  quotes = [],
+  summary,
+  steps = [],
+  layout = 'split',
+}) => {
+  const QuotePills = () => {
+    if (!quotes.length) return null;
+    return (
+      <div className="flex flex-col gap-2 mt-[-6px] mb-6">
+        {quotes.map((quote, index) => (
+          <div
+            key={`${quote}-${index}`}
+            className="rounded-md bg-neutral-100 dark:bg-neutral-800 px-3 py-2 text-sm font-semibold italic text-neutral-900 dark:text-neutral-100"
+          >
+            {quote}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const StepsList = () => {
+    if (!steps.length) return null;
+    return (
+      <ol className="list-decimal space-y-3 pl-5 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+        {steps.map((step, index) => (
+          <li key={`${step}-${index}`}>{step}</li>
+        ))}
+      </ol>
+    );
+  };
+
+  const TextContent = () => (
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-row items-center gap-2">
+        {icon}
+        <div>
+          <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">{title}</h3>
+          {subtitle ? <p className="text-sm text-neutral-600 dark:text-neutral-400">{subtitle}</p> : null}
+        </div>
+      </div>
+      <QuotePills />
+      <div className="border-t border-dashed border-black/[0.08] dark:border-white/[0.08] pt-4 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+        {summary}
+      </div>
+      <StepsList />
+    </div>
+  );
+
+  const Media = () =>
+    image ? (
+      <div className="flex-1 rounded-2xl border border-black/[0.08] dark:border-white/[0.08] overflow-hidden">
+        <img src={image} alt={imageAlt} className="block h-full w-full object-cover" />
+      </div>
+    ) : null;
+
+  if (layout === 'full') {
+    return (
+      <section className="flex flex-col gap-6 py-8">
+        <div className="rounded-2xl overflow-hidden">
+          <img src={image} alt={imageAlt} className="block h-auto w-auto object-cover" />
+        </div>
+        <TextContent />
+      </section>
+    );
+  }
+
+  return (
+    <section className="flex flex-col gap-6 py-8 md:flex-row md:items-start">
+      <div className="flex-1 min-w-[260px]">
+        <TextContent />
+      </div>
+      <div className="flex-1 min-w-[260px]">
+        <Media />
+      </div>
+    </section>
+  );
+};
+
+export const UseCase = ({
+  title,
+  icon,
+  image,
+  imageAlt = '',
+  quotes = [],
+  summary,
+  steps = [],
+}) => {
+  return (
+    <section className="flex flex-col gap-2 py-10">
+      <div className="rounded-3xl overflow-hidden mb-1 w-full">
+        <div className="relative w-full" style={{ aspectRatio: '16/9', minHeight: 0 }}>
+          <img
+            src={image}
+            alt={imageAlt}
+            className="block w-full h-auto object-contain"
+            style={{ objectPosition: 'top', maxHeight: '400px', margin: '0 auto' }}
+          />
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          {icon}
+          <h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h3>
+        </div>
+
+        {quotes.length ? (
+          <div className="flex flex-col gap-3">
+            {quotes.map((quote, idx) => (
+              <div
+                key={`${quote}-${idx}`}
+                className="inline-block rounded-lg bg-neutral-100 dark:bg-neutral-800 px-3 py-2 text-sm font-semibold italic text-neutral-900 dark:text-neutral-100"
+                style={{ display: 'inline-block', width: 'fit-content', maxWidth: '100%' }}
+              >
+                {quote}
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {summary ? (
+          <div className="border-t border-dashed border-black/[0.08] dark:border-white/[0.08] pt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+            {summary}
+          </div>
+        ) : null}
+
+        {steps.length ? (
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">Rover solves this:</p>
+            <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+              {steps.map((step, index) => (
+                <li key={`${step}-${index}`}>{step}</li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
+      </div>
+    </section>
+  );
+};

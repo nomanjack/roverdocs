@@ -1,0 +1,78 @@
+---
+title: "Use Cases"
+description: "How teams use Rover"
+---
+
+import { UseCase } from '/snippets/utility.mdx';
+
+<UseCase
+   icon={
+    <span className="flex items-center gap-2">
+      <img src="/figma-assets/86c1f4d0cf6aec68977dd7e871b2a10121efedbc.svg" alt="" className="h-4 w-4" />
+      <span className="text-xl font-semibold tracking-tight text-neutral-900">Search</span>
+    </span>
+  }
+  image="/figma-assets/2ba7b232b895e71ef041b1e90753684f6711124a.png"
+  imageAlt="Rover dashboard showing investigation and search"
+  quotes={[
+    "Do you know why this issue happened?",
+    "Was there a flipping event or insufficient funds?",
+    "Can I trace the source of this transaction?"
+  ]}
+  summary="As a support team member, you often need to investigate issues to determine the source, such as slippage or insufficient funds."
+  steps={[
+    "Search by the transaction hash [shortcut].",
+    "Click into the detail page to understand the sub-transactions (aka internal transactions). Jump between related objects to follow the chain of activity."
+  ]}
+/>
+
+<UseCase
+  icon={
+    <span className="flex items-center gap-2">
+      <img src="/figma-assets/86c1f4d0cf6aec68977dd7e871b2a10121efedbc.svg" alt="" className="h-4 w-4" />
+      <span className="text-xl font-semibold tracking-tight text-neutral-900">Monitor</span>
+    </span>
+  }
+  image="/figma-assets/2ba7b232b895e71ef041b1e90753684f6711124a.png"
+  imageAlt="Rover dashboard showing monitoring workflows"
+  quotes={[
+    "Track all the activity across my corporate wallets",
+    "Do you know why this issue happened?",
+    "Was there a flipping event or insufficient funds?",
+    "Can I trace the source of this transaction?"
+  ]}
+  summary="As an on-chain builder, you want to easily track and understand the activity in your corporate wallets including the sub-transaction details and the participants involved."
+  steps={[
+    "Label your corporate wallets.",
+    "Create a view of your corporate wallet addresses (e.g., ACME addresses).",
+    "Monitor the transactions that an ACME address was involved in [Participants | All MetaMask Contracts]. Save this search as a View that updates live with the chain.",
+    "Investigate the transactions by clicking into the detail pages and seeing the sub-transactions (aka internal transactions). Jump between related objects to follow the chain of activity.",
+    "[Coming soon!] Alerts and notifications in Slack to monitor things like transaction failures."
+  ]}
+/>
+
+
+<UseCase
+  icon={
+    <span className="flex items-center gap-2">
+      <img src="/figma-assets/86c1f4d0cf6aec68977dd7e871b2a10121efedbc.svg" alt="" className="h-4 w-4" />
+      <span className="text-xl font-semibold tracking-tight text-neutral-900">Share</span>
+    </span>
+  }
+  image="/figma-assets/2ba7b232b895e71ef041b1e90753684f6711124a.png"
+  imageAlt="Rover dashboard showing monitoring workflows"
+  quotes={[
+    "Track all the activity across my corporate wallets",
+    "Do you know why this issue happened?",
+    "Was there a flipping event or insufficient funds?",
+    "Can I trace the source of this transaction?"
+  ]}
+  summary="As a data engineer, you are constantly getting requests for insights from finance and other cross-functional business teams. The finance team wants to know if they have forgotten any wallets or transactions for accounting purposes. "
+  steps={[
+    "Label your corporate wallets.",
+    "Create a view of your corporate wallet addresses (e.g., ACME addresses).",
+    "Monitor the transactions that an ACME address was involved in [Participants | All MetaMask Contracts]. Save this search as a View that updates live with the chain.",
+    "Investigate the transactions by clicking into the detail pages and seeing the sub-transactions (aka internal transactions). Jump between related objects to follow the chain of activity.",
+    "[Coming soon!] Alerts and notifications in Slack to monitor things like transaction failures."
+  ]}
+/>

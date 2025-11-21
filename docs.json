@@ -1,0 +1,94 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "palm",
+  "name": "Rover Docs",
+  "colors": {
+    "primary": "#000000",
+    "light": "#00000",
+    "dark": "#ffffff"
+  },
+  "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "overview/rover",
+          "overview/use-cases"
+        ]
+      },
+      {
+        "group": "Get Started",
+        "pages": [
+          "get-started/welcome",
+          "get-started/concepts",
+          "get-started/examples"
+        ]
+      },
+      {
+        "group": "Core",
+        "pages": [
+          "core/command-menu",
+          "core/tables",
+          "core/detail-pages",
+          "core/views",
+          "core/labels-bookmarks",
+          "core/sharing",
+          "core/personalization"
+
+        ]
+      },
+       {
+        "group": "Contact",
+        "pages": [
+          "contact/slack",
+          "contact/email"
+
+        ]
+      }
+    ],
+    "global": {
+    
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hi@mintlify.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  }
+}

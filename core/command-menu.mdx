@@ -1,0 +1,87 @@
+---
+title: "Command Menu"
+---
+
+
+import { Container, Title } from '/snippets/utility.mdx';
+
+<br/>
+
+
+Everything in Rover starts with the search terminal. Using our search terminal (CMD-K), you can create searches that filter the blockchain in an infinite number of ways.
+
+### How do I make searches?
+
+Rover is built on the concept of building blocks. Think of them as legos that you can pieces together to create powerful searches. 
+
+### What are search categories?
+
+In Rover, there are four search categories that you can search in: transactions, addresses, assets, and blocks. In each search category there are a number of different building blocks, you can think of these as the properties of the type of search you are making. Each building block is part of either:
+
+<br/>
+
+<Container>
+  <div className="flex gap-2">
+    <div
+      className="rounded-full border border-orange-400 text-neutral-900 font-small w-fit flex items-center"
+      style={{ height: '28px', padding: '0 12px' }}
+    >
+      transactions
+    </div>
+    <div
+      className="rounded-full border border-green-400 text-neutral-900 font-small w-fit flex items-center"
+      style={{ height: '28px', padding: '0 12px' }}
+    >
+      addresses
+    </div>
+    <div
+      className="rounded-full border border-blue-400 text-neutral-900 font-small w-fit flex items-center"
+      style={{ height: '28px', padding: '0 12px' }}
+    >
+      assets
+    </div>
+    <div
+      className="rounded-full border border-purple-400 text-neutral-900 font-small w-fit flex items-center"
+      style={{ height: '28px', padding: '0 12px' }}
+    >
+      blocks
+    </div>
+  </div>
+</Container>
+
+<br/>
+
+
+To view the full list of building blocks in each search category, visit this. You can also see the full list of building blocks by using the ⬆️ and ⬇️ arrow keys within the search terminal.
+
+### What are building blocks?
+
+Every object on the blockchain has a set of properties. On Rover, we call these categories: transactions, addresses, assets, and blocks. Now, each category in Rover has a certain set of properties you can use to search, and they are represented as building blocks. For example, a property of a transaction is the transaction fee, so, one of the building blocks you have access to is called `Transaction Fee`.
+
+### How do I combine building blocks?
+
+In the search terminal, we also allow for operators such as AND, OR, NOT, ( and ). You can use these to combine building blocks together. 
+
+Keep in mind that in order to create a search in Rover, you can use mutliple building blocks. However, you must use building blocks in the same search category. For example, if you started searching in the Assets search category, you can use any asset building block for your search and combine it with other asset building blocks. You are not allowed to combine building blocks across the categories, *yet.*
+
+Put in another way, each building block in rover is part of a family (i.e. search category), and families must stick together!  🫶
+
+It's easy to track this, since we have convienetly color-coded each of the search categories, therefore when you build a search it will all be in one color!
+
+### Syntax Sugar & Smart Paste Detection
+
+You don't need to use binary operators to build a search. We will do "syntax sugar" when you search to make sure your query is well-formed. 
+
+We also have smart paste detection, so if you paste in a transaction hash or an address, it automatically detect what you are looking for. 
+
+### How do I use the Search Terminal?
+
+THe search terminal is powerful, and it might take a little getting used to before you starting flying with your searches. There are a couple of ways to use the terminal.
+
+1. Start typing, yes simple. When you start typing you will be able to see building blocks populate that match your input
+
+2. Select a search category. If you want a more guided approach to searching, we recommend diving into a search category and then exploring from there. Within each building block, you will see suggestions to help you build your search
+
+3. Use of building block translator. Yeah, you can use AI. We've build a natural language → building block translator so you can use your favorite language to ask questions and get back a structured search.
+
+When you're happy with your search, hit CMD-ENTER and let the exploration commence!

@@ -1,0 +1,466 @@
+/**
+ * Rover Documentation - Custom Styles
+ * 
+ * Uses Tailwind CSS neutral color utilities only - no hardcoded values
+ * Supports dark mode using the dark: variant
+ * 
+ * Reference: https://tailwindcss.com/docs/dark-mode
+ * Reference: https://tailwindcss.com/docs/colors
+ */
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  @apply bg-neutral-50 border border-black/[0.08] transition-all duration-200;
+}
+
+.card:hover {
+  @apply bg-neutral-100 border-black/[0.12];
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    @apply bg-neutral-900 border-white/[0.08];
+  }
+  
+  .card:hover {
+    @apply bg-neutral-800 border-white/[0.12];
+  }
+}
+
+/* Override Mintlify card borders */
+.card-group .card {
+  @apply border-black/[0.08];
+}
+
+.card-group .card:hover {
+  @apply border-black/[0.12];
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-group .card {
+    @apply border-white/[0.08] !important;
+  }
+  
+  .card-group .card:hover {
+    @apply border-white/[0.12] !important;
+  }
+}
+
+/* Card icon stroke width */
+.card-group .card .icon,
+.card-group .card svg {
+  stroke-width: 1px;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+a {
+  @apply text-neutral-900 no-underline transition-opacity duration-200;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    @apply text-neutral-100;
+  }
+}
+
+a:hover {
+  @apply opacity-70;
+}
+
+.nav-anchor,
+.navbar-link {
+  @apply transition-opacity duration-200;
+}
+
+.nav-anchor:hover,
+.navbar-link:hover {
+  @apply opacity-70;
+}
+
+.nav-anchor[data-active="true"] {
+  @apply font-semibold opacity-100;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-neutral-900 font-semibold;
+}
+
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-neutral-50;
+  }
+}
+
+#page-title {
+  @apply text-neutral-900;
+}
+
+@media (prefers-color-scheme: dark) {
+  #page-title {
+    @apply text-neutral-50;
+  }
+}
+
+/* ============================================
+   BORDERS - 8% opacity throughout
+   ============================================ */
+
+#navbar {
+  @apply border-b border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  #navbar {
+    @apply border-white/[0.08];
+  }
+}
+
+#sidebar {
+  @apply border-r border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  #sidebar {
+    @apply border-white/[0.08];
+  }
+}
+
+#table-of-contents {
+  @apply border-l border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  #table-of-contents {
+    @apply border-white/[0.08];
+  }
+}
+
+#footer {
+  @apply border-t border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  #footer {
+    @apply border-white/[0.08];
+  }
+}
+
+hr {
+  @apply border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  hr {
+    @apply border-white/[0.08];
+  }
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+thead {
+  @apply bg-neutral-50 border-b border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  thead {
+    @apply bg-neutral-900 border-white/[0.08];
+  }
+}
+
+tbody tr {
+  @apply border-b border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  tbody tr {
+    @apply border-white/[0.08];
+  }
+}
+
+tbody tr:hover {
+  @apply bg-neutral-50;
+}
+
+@media (prefers-color-scheme: dark) {
+  tbody tr:hover {
+    @apply bg-neutral-900;
+  }
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+
+code:not([class*="language-"]) {
+  @apply bg-neutral-100 text-neutral-900 px-1 py-0.5 rounded text-sm;
+}
+
+@media (prefers-color-scheme: dark) {
+  code:not([class*="language-"]) {
+    @apply bg-neutral-800 text-neutral-100;
+  }
+}
+
+.code-block {
+  @apply bg-neutral-50 border border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  .code-block {
+    @apply bg-neutral-950 border-white/[0.08];
+  }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+#topbar-cta-button {
+  @apply bg-neutral-900 text-neutral-50 border border-neutral-900 transition-all duration-200;
+}
+
+#topbar-cta-button:hover {
+  @apply bg-neutral-800 border-neutral-800;
+}
+
+@media (prefers-color-scheme: dark) {
+  #topbar-cta-button {
+    @apply bg-neutral-100 text-neutral-900 border-neutral-100;
+  }
+  
+  #topbar-cta-button:hover {
+    @apply bg-neutral-200 border-neutral-200;
+  }
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+#search-input {
+  @apply bg-neutral-50 border border-black/[0.08] text-neutral-900;
+}
+
+@media (prefers-color-scheme: dark) {
+  #search-input {
+    @apply bg-neutral-900 border-white/[0.08] text-neutral-100;
+  }
+}
+
+#search-input:focus {
+  @apply outline-2 outline-black/[0.12] outline-offset-2 border-black/[0.12];
+}
+
+@media (prefers-color-scheme: dark) {
+  #search-input:focus {
+    @apply outline-white/[0.12] border-white/[0.12];
+  }
+}
+
+/* ============================================
+   CALLOUTS & ALERTS
+   ============================================ */
+
+.callout {
+  @apply bg-neutral-50 border-l-4 border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout {
+    @apply bg-neutral-900 border-white/[0.08];
+  }
+}
+
+/* ============================================
+   ACCORDIONS
+   ============================================ */
+
+.accordion {
+  @apply border border-black/[0.08] rounded-lg;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accordion {
+    @apply border-white/[0.08];
+  }
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+
+.nav-tabs {
+  @apply border-b border-black/[0.08];
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-tabs {
+    @apply border-white/[0.08];
+  }
+}
+
+.nav-tabs-item {
+  @apply text-neutral-600 transition-colors duration-200;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-tabs-item {
+    @apply text-neutral-400;
+  }
+}
+
+.nav-tabs-item:hover,
+.nav-tabs-item[data-active="true"] {
+  @apply text-neutral-900;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-tabs-item:hover,
+  .nav-tabs-item[data-active="true"] {
+    @apply text-neutral-100;
+  }
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+#pagination {
+  @apply border-t border-black/[0.08] mt-12 pt-8;
+}
+
+@media (prefers-color-scheme: dark) {
+  #pagination {
+    @apply border-white/[0.08];
+  }
+}
+
+.pagination-prev,
+.pagination-next {
+  @apply border border-black/[0.08] rounded-lg p-4 transition-all duration-200;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination-prev,
+  .pagination-next {
+    @apply border-white/[0.08];
+  }
+}
+
+.pagination-prev:hover,
+.pagination-next:hover {
+  @apply bg-neutral-50 border-black/[0.12];
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination-prev:hover,
+  .pagination-next:hover {
+    @apply bg-neutral-900 border-white/[0.12];
+  }
+}
+
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================ */
+
+.toc-item {
+  @apply text-neutral-600 transition-colors duration-200;
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc-item {
+    @apply text-neutral-400;
+  }
+}
+
+.toc-item:hover,
+.toc-item[data-active="true"] {
+  @apply text-neutral-900;
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc-item:hover,
+  .toc-item[data-active="true"] {
+    @apply text-neutral-100;
+  }
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.sidebar-group-header {
+  @apply text-neutral-600 font-medium uppercase text-xs tracking-wider;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar-group-header {
+    @apply text-neutral-400;
+  }
+}
+
+.sidebar-title {
+  @apply text-neutral-900 transition-opacity duration-200;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar-title {
+    @apply text-neutral-100;
+  }
+}
+
+.sidebar-title:hover {
+  @apply opacity-70;
+}
+
+.sidebar-title[data-active="true"] {
+  @apply font-semibold;
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+
+*:focus-visible {
+  @apply outline-2 outline-black/[0.12] outline-offset-2;
+}
+
+@media (prefers-color-scheme: dark) {
+  *:focus-visible {
+    @apply outline-white/[0.12];
+  }
+}
+
+/* ============================================
+   TEXT SELECTION
+   ============================================ */
+
+::selection {
+  @apply bg-neutral-200 text-neutral-900;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    @apply bg-neutral-800 text-neutral-100;
+  }
+}
+
+/* ============================================
+   PROSE IMAGES
+   ============================================ */
+
+.prose :where(img):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin: 0;
+}

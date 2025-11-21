@@ -1,0 +1,92 @@
+---
+title: "Welcome"
+---
+
+
+import { Container, Title } from '/snippets/utility.mdx';
+
+
+Rover is an all-in-one on-chain information engine that enables you to search, monitor, and aggregate blockchain activity in real-time, transforming complex data into intuitive, actionable insights for everyone.
+
+![Rover Dashboard](/figma-assets/2ba7b232b895e71ef041b1e90753684f6711124a.png)
+
+We're the blockchain's only filter-based search engine. Ask complex questions and get instant answers, it's that simple.
+
+While traditional block explorers show you data, we help you find exactly what you're looking for. We've kept all the core features you expect from an explorer, added powerful filtering capabilities, and sprinkled in some AI magic to make blockchain data truly accessible.
+
+## Status & Data Coverage
+
+The beta release is focused on Ethereum. We offer 1 month of historical data and we live stream loads every 2 minutes with new blocks being mined and finalized.
+
+<Container>
+  <div className="w-full flex flex-col mt-4">
+    <div className="flex flex-col items-start justify-center w-full max-w-4xl text-left mt-5 mb-5">
+      <div className="w-full rounded-lg outline outline-1 outline-offset-[-0.5px] outline-black/[0.08] dark:outline-white/[0.08] overflow-hidden">
+        {/* Header */}
+
+        <div className="bg-neutral-50 dark:bg-neutral-800 border-b border-black/[0.08] dark:border-white/[0.08] flex">
+          <div className="flex-1 px-3 py-1.5 flex items-center">
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Name</span>
+          </div>
+
+          <div className="flex-1 px-3 py-1.5 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center">
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Timeline</span>
+          </div>
+
+          <div className="w-28 px-3 py-1.5 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center">
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Status</span>
+          </div>
+        </div>
+
+        {/* Row: Ethereum */}
+
+        <div className="bg-white dark:bg-neutral-900 border-b border-black/[0.08] dark:border-white/[0.08] flex">
+          <div className="flex-1 px-3 py-2 flex items-center">
+            <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Ethereum</span>
+          </div>
+
+          <div className="flex-1 px-3 py-2 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center">
+            <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">October 2025 → Present</span>
+          </div>
+
+          <div className="w-28 px-3 py-2 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center">
+            <span className="text-emerald-500 text-sm font-medium leading-5">Live</span>
+          </div>
+        </div>
+
+        {/* Row: Base */}
+
+        <div className="bg-white dark:bg-neutral-900 border-b border-black/[0.08] dark:border-white/[0.08] flex">
+          <div className="flex-1 px-3 py-2 flex items-center">
+            <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Base</span>
+          </div>
+
+          <div className="flex-1 px-3 py-2 border-l border-neutral-200 flex items-center">
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 opacity-70">Coming Soon</span>
+          </div>
+
+          <div className="w-28 px-3 py-2 border-l border-neutral-200 flex items-center">
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 opacity-70">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>
+
+## Learn more
+
+<CardGroup cols={3}>
+  <Card title="Start Guide" icon="book-open" href="/get-started">
+  </Card>
+  <Card title="Changelog" icon="sparkles" href="/changelog">
+  </Card>
+  <Card title="Concepts" icon="lightbulb" href="/concepts">
+  </Card>
+  <Card title="Examples" icon="circle-info" href="/examples">
+  </Card>
+  <Card title="Support" icon="headset" href="/support">
+  </Card>
+  <Card title="Book Live Demo" icon="video" href="/demo">
+  </Card>
+</CardGroup>
