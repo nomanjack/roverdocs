@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 export const Container = ({ children }) => {
   return (
     <div className="px-1">
@@ -16,7 +20,7 @@ export const Title = ({ children }) => {
 
 export const LearnTitle = ({ children }) => {
   return (
-    <div className="text-neutral-900 dark:text-neutral-100 text-2xl font-bold">
+    <div className="text-neutral-900 dark:text-neutral-100 text-2xl font-semibold">
       {children}
     </div>
   )
@@ -26,7 +30,7 @@ export const TitleLink = ({ children, href }) => {
   return (
     <a
       href={href}
-      className="text-neutral-900 dark:text-neutral-100 font-bold flex items-center gap-1 hover:opacity-70 transition-opacity"
+      className="text-neutral-900 dark:text-neutral-100 font-semibold flex items-center gap-1 hover:opacity-70 transition-opacity"
     >
       {children} <Icon icon="arrow-right" size="14" />
     </a>
@@ -37,7 +41,7 @@ export const VideoLink = ({ children, href }) => {
   return (
     <a
       href={href}
-      className="text-neutral-900 dark:text-neutral-100 font-bold flex items-center gap-1 hover:opacity-70 transition-opacity"
+      className="text-neutral-900 dark:text-neutral-100 font-semibold flex items-center gap-1 hover:opacity-70 transition-opacity"
     >
       {children} <Icon icon="arrow-up-right" size="14" />
     </a>
@@ -47,7 +51,7 @@ export const VideoLink = ({ children, href }) => {
 export const QuickstartItem = ({ title, description, icon, href }) => {
   return (
     <a className="group flex items-start gap-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 p-3 rounded-xl transition-colors" href={href}>
-      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg border border-black/[0.08] dark:border-white/[0.08] bg-neutral-50 dark:bg-neutral-800">
+      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg border border-black/[0.08] dark:border-neutral-100/[0.08] bg-neutral-50 dark:bg-neutral-800">
         {icon}
       </div>
       <div>
@@ -70,7 +74,7 @@ export const ImageCard = ({ img, href, title, description }) => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:opacity-70 transition-opacity">
+          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 group-hover:opacity-70 transition-opacity">
             {title}
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 font-medium text-lg">
@@ -87,8 +91,7 @@ export const WaitlistButton = ({ href = '#', label = 'Join waitlist' }) => {
     <a
       href={href}
       className="
-        mt-4
-        inline-flex items-center gap-2
+              inline-flex items-center gap-2
         px-4 py-2 rounded-md text-sm font-medium
         border
         border-neutral-900 text-neutral-100 bg-neutral-900 
@@ -119,7 +122,7 @@ export const CaseStudy = ({
   const QuotePills = () => {
     if (!quotes.length) return null;
     return (
-      <div className="flex flex-col gap-2 mt-[-6px] mb-6">
+      <div className="flex flex-col gap-2 mb-6">
         {quotes.map((quote, index) => (
           <div
             key={`${quote}-${index}`}
@@ -153,7 +156,7 @@ export const CaseStudy = ({
         </div>
       </div>
       <QuotePills />
-      <div className="border-t border-dashed border-black/[0.08] dark:border-white/[0.08] pt-4 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+      <div className="border-t border-dashed border-black/[0.08] dark:border-neutral-100/[0.08] pt-4 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
         {summary}
       </div>
       <StepsList />
@@ -162,7 +165,7 @@ export const CaseStudy = ({
 
   const Media = () =>
     image ? (
-      <div className="flex-1 rounded-2xl border border-black/[0.08] dark:border-white/[0.08] overflow-hidden">
+      <div className="flex-1 rounded-2xl border border-black/[0.08] dark:border-neutral-100/[0.08] overflow-hidden">
         <img src={image} alt={imageAlt} className="block h-full w-full object-cover" />
       </div>
     ) : null;
@@ -201,13 +204,14 @@ export const UseCase = ({
 }) => {
   return (
     <section className="flex flex-col gap-2 py-10">
-      <div className="rounded-3xl overflow-hidden mb-1 w-full">
+      <div className="rounded-3xl overflow-hidden w-full">
         <div className="relative w-full" style={{ aspectRatio: '16/9', minHeight: 0 }}>
           <img
             src={image}
             alt={imageAlt}
             className="block w-full h-auto object-contain"
-            style={{ objectPosition: 'top', maxHeight: '400px', margin: '0 auto' }}
+            className="mx-auto"
+            style={{ objectPosition: 'top', maxHeight: '400px' }}
           />
         </div>
       </div>
@@ -215,7 +219,7 @@ export const UseCase = ({
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           {icon}
-          <h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h3>
+          <h3 className="text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h3>
         </div>
 
         {quotes.length ? (
@@ -227,21 +231,29 @@ export const UseCase = ({
                 style={{ display: 'inline-block', width: 'fit-content', maxWidth: '100%' }}
               >
                 {quote}
+
               </div>
             ))}
+
+            
           </div>
+
+          
         ) : null}
 
         {summary ? (
-          <div className="border-t border-dashed border-black/[0.08] dark:border-white/[0.08] pt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+          <div className="border-t border-dashed border-black/[0.08] dark:border-neutral-100/[0.08] pt-4 text-m leading-6 text-neutral-600 dark:text-neutral-400">
             {summary}
           </div>
         ) : null}
 
         {steps.length ? (
           <div className="space-y-2">
-            <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">Rover solves this:</p>
-            <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+
+          <br/>
+
+            <p className="text-m font-medium text-neutral-900 dark:text-neutral-100 mt-4">Rover solves this:</p>
+            <ol className="list-decimal space-y-2 pl-5 text-m leading-6 text-neutral-700 dark:text-neutral-300">
               {steps.map((step, index) => (
                 <li key={`${step}-${index}`}>{step}</li>
               ))}
@@ -250,5 +262,49 @@ export const UseCase = ({
         ) : null}
       </div>
     </section>
+  );
+};
+
+export const DetailPageTabs = () => {
+  const [activeTab, setActiveTab] = useState('Transaction');
+  
+  const tabs = [
+    'Transaction',
+    'Address (Account)',
+    'Address (Smart Contract)',
+    'Asset (Token)',
+    'Asset (NFT)',
+    'Block'
+  ];
+
+  return (
+    <div className="rounded-xl mt-3 pt-6">
+      <div className="flex mb-2 overflow-x-auto">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`text-sm font-semibold px-2 py-1 whitespace-nowrap transition-all duration-200 ${
+              activeTab === tab
+                ? 'opacity-100 bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-100'
+                : 'opacity-60 bg-transparent hover:opacity-100'
+            }`}
+            style={{
+              borderRadius: activeTab === tab ? '8px' : '0',
+            }}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+      <div className="text-base">
+        <h3 className="font-semibold text-lg mb-4 text-neutral-900 dark:text-neutral-100">
+          Subtransactions (aka Internal Transactions)
+        </h3>
+        <p className="mb-0 text-neutral-700 dark:text-neutral-300">
+          There is a unique icon associated with each subtransaction that indicates the level the subtransaction exists at in relation to the root transaction. The syntax (0-1-0) is how you can follow it.
+        </p>
+      </div>
+    </div>
   );
 };

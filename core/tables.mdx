@@ -1,21 +1,101 @@
 ---
 title: "Tables"
-description: "Customize data tables for high-signal monitoring."
 ---
 
-## Column presets
+<br/>
 
-Start with default presets for investigations, compliance monitoring, or treasury flows. Customize columns per saved view by reordering, renaming, or hiding them.
+## Table types
 
-- Toggle chain-specific columns when you need method signatures.
-- Add computed columns (e.g., USD value, variance) for at-a-glance insights.
-- Save presets so the same layout loads for everyone.
+There are four different table types in Rover. Depending on your search, you will get a list of results back that is a:
 
-## Inline actions
+<div className="mt-4 w-full rounded-lg outline outline-1 outline-offset-[-0.5px] outline-black/[0.08] dark:outline-neutral-100/[0.08] overflow-hidden">
+  <div className="bg-neutral-50 dark:bg-neutral-800 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
+    <div className="flex-1 px-3 py-1.5 flex items-center">
+      <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 uppercase tracking-wide">
+        Table
+      </span>
+    </div>
+    <div className="flex-[2] px-3 py-1.5 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
+      <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 uppercase tracking-wide">
+        Description
+      </span>
+    </div>
+  </div>
 
-Hover over any row to surface quick actions: label, bookmark, export row, or open the detail page.
+  <div className="bg-neutral-100 dark:bg-neutral-900 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
+    <div className="flex-1 px-3 py-2 flex items-center">
+      <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Transactions Table</span>
+    </div>
+    <div className="flex-[2] px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
+      <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">A list of transactions.</span>
+    </div>
+  </div>
+
+  <div className="bg-neutral-100 dark:bg-neutral-900 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
+    <div className="flex-1 px-3 py-2 flex items-center">
+      <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Addresses Table</span>
+    </div>
+    <div className="flex-[2] px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
+      <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">
+        A list of addresses, including accounts and smart contracts.
+      </span>
+    </div>
+  </div>
+
+  <div className="bg-neutral-100 dark:bg-neutral-900 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
+    <div className="flex-1 px-3 py-2 flex items-center">
+      <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Assets Table</span>
+    </div>
+    <div className="flex-[2] px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
+      <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">A list of assets, including tokens and NFTs.</span>
+    </div>
+  </div>
+
+  <div className="bg-neutral-100 dark:bg-neutral-900 flex">
+    <div className="flex-1 px-3 py-2 flex items-center">
+      <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Blocks Table</span>
+    </div>
+    <div className="flex-[2] px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
+      <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">A list of blocks.</span>
+    </div>
+  </div>
+</div>
+
+<p className="mt-4 text-m leading-6 text-neutral-700 dark:text-neutral-300">
+  For any table, you can shrink or grow columns, move columns around, or use the <em>action bar</em> to manipulate the table:
+  add properties, hide properties, or sort.
+</p>
+
+## Default properties
+
+Each table has different default properties that will appear as columns. All of the tables have the same design—the only difference is
+the type of data you are looking at.
+
+## Manipulating tables
+
+For any table, you can shrink or grow columns, move columns around, or use the <em>action bar</em> to manipulate the table:
+add properties, hide properties, or sort.
+
+## Sort
+
+Using the action bar, you can use the dropdown menu to sort properties within the table.
+
+
 
 <Note>
-Inline actions respect role-based access control. If a teammate cannot edit labels, the action is hidden automatically.
-</Note>
+  Note: only a few properties are sortable right now, but more are in the works. If there is one that is particularly important to you,
+  <a href="mailto:hi@rover.inc" >let us know</a>.
+  </Note>
+
+## Add or remove properties
+
+Using the action bar, you can use the dropdown menu to add or remove properties within the table.
+
+## Drag columns around or change column width 
+
+
+- Grab the column’s header with your mouse to move it around
+- Hover you mouse on the property header, you’ll notice the icon appear where you can expand or contract the width of the column; if you double click, we will auto-size it.
+
+
 

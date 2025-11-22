@@ -3,9 +3,9 @@
   "theme": "palm",
   "name": "Rover Docs",
   "colors": {
-    "primary": "#000000",
-    "light": "#00000",
-    "dark": "#ffffff"
+    "primary": "#212121",
+    "light": "#212121",
+    "dark": "#e4e4e4"
   },
   "favicon": "/favicon.svg",
   "appearance": {
@@ -42,12 +42,12 @@
 
         ]
       },
-       {
+      {
         "group": "Contact",
         "pages": [
+          "contact/talk-to-us",
           "contact/slack",
           "contact/email"
-
         ]
       }
     ],
@@ -63,13 +63,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@rover.inc"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Rover.inc",
+      "href": "https://rover.inc"
     }
   },
   "contextual": {
@@ -86,9 +86,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/roverinc",
+      "linkedin": "https://linkedin.com/company/roverinc"
     }
   }
 }

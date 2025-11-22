@@ -1,26 +1,56 @@
 ---
 title: "Views"
-description: "Build reusable workspaces for teams and programs."
 ---
 
-## Types of views
 
-- **Personal views** – private dashboards for individuals to track what matters to them.
-- **Shared views** – collaborative workspaces that roll up saved filters, charts, and automations.
-- **Command views** – read-only snapshots used for executive reviews or compliance attestations.
+<br/>
 
-## Building a view
+Views allow you to save your searches. The best part of creating views is that they dynamically update with the blockchain, so you can set them up and watch them refresh live as new blocks are mined.
 
-1. Click **Create view** from the sidebar.
-2. Choose a template (investigation, monitoring, or reporting) or start blank.
-3. Add blocks such as tables, charts, cards, and pinned searches.
-4. Assign owners and viewers to control who can edit or subscribe to alerts.
+## Create a View
 
-## Governance
+To create a View, you must:
 
-<Card icon="shield" title="Access controls">
-Only owners can edit the structure of a shared view. Editors may tweak filters but cannot change automation rules.
-</Card>
 
-Archive stale views to keep navigation tidy. Archived views remain searchable for auditing but no longer trigger alerts.
 
+<Steps>
+<Step>
+Open the command menu and create a search
+</Step>
+<Step>
+<span className="text-base ">
+        In your action bar, click <span className="font-medium text-sm bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded ml-1">Save as View</span>
+      </span></Step>
+<Step>
+Add a name for your View
+</Step>
+<Step>
+ <span className="text-base  ">
+        Hit <span className="font-medium text-sm bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded ml-1">Save</span>
+      </span></Step>
+</Steps>
+
+
+## Go to Views
+
+To find all the Views you've created, you can navigate to the Views page within your sidebar. There, you will find all your Views, and you can separate them by search category type.
+
+## Quick actions on Views
+
+If you hover over any View, there are quick actions you can take including: renaming, duplicating, sharing, and deleting the View.
+
+## Views as building blocks
+
+The full power of searching in Rover comes from using Views within building blocks. This is how more complex searching can be accomplished quickly and simply.
+
+For example, let's say you created an Address View called **Engineering Wallets** and want to find all the transactions that involved any of the addresses in **Engineering Wallets**.
+
+All you need to do is use the **Participants** building block and search for your view. CMD-Enter, and done! You get back a table of all the transactions from any of the addresses in Engineering Wallets View.
+
+## View types
+
+It's important to keep in mind that views can only be used in building blocks that match the building block's input type. In the previous example, I was able to pass in the **Engineering Wallets** because the **Participants** building block's input expects addresses as an input. Since Engineering Wallets are addresses, this worked!
+
+## Views in Tables
+
+Whenever you make a search, you can add the View property as a column. If that row is part of a View you've created, you will see the View appear in the column.
