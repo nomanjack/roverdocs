@@ -49,10 +49,86 @@
   }
 }
 
-/* Card icon stroke width */
+/* Card icon stroke width - thinner */
 .card-group .card .icon,
-.card-group .card svg {
-  stroke-width: 1px;
+.card-group .card svg,
+.card-group .card svg path {
+  stroke-width: 0.75px !important;
+}
+
+/* Card typography - match app typography */
+.card-group .card-title,
+.card-group .card h3,
+.card-group .card h4 {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+
+@media (min-width: 768px) {
+  .card-group .card-title,
+  .card-group .card h3,
+  .card-group .card h4 {
+    font-size: 15px !important;
+  }
+}
+
+/* Equal vertical padding for cards */
+.card-group .card {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+/* ============================================
+   CUSTOM LEARN MORE CARDS
+   ============================================ */
+
+a.learn-more-card,
+.learn-more-card {
+  background-color: #ffffff !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+a.learn-more-card:hover,
+.learn-more-card:hover {
+  background-color: #fafafa !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+a.learn-more-card:focus,
+.learn-more-card:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  a.learn-more-card,
+  .learn-more-card {
+    background-color: #ffffff !important;
+  }
+  
+  a.learn-more-card:hover,
+  .learn-more-card:hover {
+    background-color: #fafafa !important;
+  }
+}
+
+.learn-more-card svg,
+.learn-more-card .icon {
+  stroke-width: 0.75px !important;
+  color: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  .learn-more-card svg,
+  .learn-more-card .icon {
+    color: #e4e4e4;
+  }
 }
 
 /* ============================================
@@ -88,16 +164,73 @@ a:hover {
 }
 
 /* ============================================
+   TYPOGRAPHY - BODY/CONTENT COPY
+   ============================================ */
+
+/* Mobile: 14px */
+body,
+p,
+.prose,
+.prose p,
+.prose li,
+.prose td,
+.prose th,
+.prose blockquote,
+.prose code,
+.prose pre {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Tablet and Desktop: 15px (768px and up) */
+@media (min-width: 768px) {
+  body,
+  p,
+  .prose,
+  .prose p,
+  .prose li,
+  .prose td,
+  .prose th,
+  .prose blockquote,
+  .prose code,
+  .prose pre {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* ============================================
    HEADINGS
    ============================================ */
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  @apply text-neutral-900 font-medium;
+}
+
+h2, h3, h4, h5, h6 {
   @apply text-neutral-900 font-semibold;
 }
 
+/* Set headings to 20px (targeting h2/h3 that are currently 22.5px) */
+h2,
+h3,
+span.cursor-pointer {
+  font-size: 18px !important;
+}
+
 @media (prefers-color-scheme: dark) {
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     @apply text-neutral-50;
+  }
+  
+  h2, h3, h4, h5, h6 {
+    @apply text-neutral-50;
+  }
+  
+  h2,
+  h3,
+  span.cursor-pointer {
+    font-size: 18px !important;
   }
 }
 
@@ -109,6 +242,74 @@ h1, h2, h3, h4, h5, h6 {
   #page-title {
     @apply text-neutral-50;
   }
+}
+
+/* Change all bold to semibold */
+strong,
+b,
+.prose strong,
+.prose b {
+  font-weight: 600 !important; /* semibold (600) instead of bold (700) */
+}
+
+/* ============================================
+   NAVBAR & SIDEBAR BACKGROUNDS
+   ============================================ */
+
+/* Navbar (top header) - white background */
+#navbar {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+nav[role="navigation"],
+header,
+[data-navbar],
+.navbar {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Sidebar - #fafafa background */
+/* #sidebar {
+  background-color: #fafafa !important;
+  background: #fafafa !important;
+} */
+
+/* aside[role="complementary"],
+[data-sidebar],
+.sidebar,
+nav[aria-label="Sidebar"] {
+  background-color: #fafafa !important;
+  background: #fafafa !important;
+} */
+
+@media (prefers-color-scheme: dark) {
+  #navbar {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  nav[role="navigation"],
+  header,
+  [data-navbar],
+  .navbar {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  /* #sidebar {
+    background-color: #fafafa !important;
+    background: #fafafa !important;
+  } */
+  
+  /* aside[role="complementary"],
+  [data-sidebar],
+  .sidebar,
+  nav[aria-label="Sidebar"] {
+    background-color: #fafafa !important;
+    background: #fafafa !important;
+  } */
 }
 
 /* ============================================
@@ -143,6 +344,44 @@ h1, h2, h3, h4, h5, h6 {
   #table-of-contents {
     @apply border-neutral-100/[0.08];
   }
+}
+
+/* Hide "On this page" heading only - using Mintlify identifiers */
+[data-table-of-contents] > h3:first-child,
+[data-table-of-contents] > h4:first-child,
+[data-table-of-contents] > h2:first-child,
+[data-table-of-contents] h3:first-of-type,
+[data-table-of-contents] h4:first-of-type,
+[data-table-of-contents] h2:first-of-type,
+#table-of-contents > h3:first-child,
+#table-of-contents > h4:first-child,
+#table-of-contents > h2:first-child,
+#table-of-contents h3:first-of-type,
+#table-of-contents h4:first-of-type,
+#table-of-contents h2:first-of-type,
+[data-toc-heading],
+.toc-heading,
+aside > h3:first-child,
+aside > h4:first-child,
+aside > h2:first-child,
+aside h3:first-of-type,
+aside h4:first-of-type,
+aside h2:first-of-type,
+[aria-label*="On this page"],
+[aria-label*="on this page"],
+button[aria-label*="On this page"],
+button[aria-label*="on this page"],
+[data-table-of-contents] button:first-child,
+[data-table-of-contents] > div:first-child button {
+  display: none !important;
+}
+
+/* Hide the hamburger icon/button next to "On this page" */
+#table-of-contents button:first-child,
+aside button:first-child,
+#table-of-contents > div:first-child button,
+aside > div:first-child button {
+  display: none !important;
 }
 
 #footer {
@@ -392,6 +631,30 @@ code:not([class*="language-"]) {
    SIDEBAR
    ============================================ */
 
+/* Sidebar navigation background */
+#navigation-items {
+  background-color: #fafafa !important;
+  background: #fafafa !important;
+}
+
+/* #sidebar,
+#sidebar nav,
+#sidebar > div,
+.sidebar-nav,
+[data-sidebar-nav] {
+  background-color: #fafafa !important;
+  background: #fafafa !important;
+} */
+
+@media (prefers-color-scheme: dark) {
+  #navigation-items {
+    background-color: #fafafa !important;
+    background: #fafafa !important;
+  }
+  
+  /* Duplicate sidebar background rules removed for clarity. Sidebar background is handled globally; no need to redeclare here. */
+}
+
 .sidebar-group-header {
   @apply text-neutral-600 font-medium uppercase text-xs tracking-wider;
 }
@@ -449,9 +712,123 @@ code:not([class*="language-"]) {
 }
 
 /* ============================================
+   TOC ACTIONS (Copy Page & Share Feedback)
+   ============================================ */
+
+.toc-action-item {
+  list-style: none;
+  margin-bottom: 0.5rem; /* Match TOC item spacing */
+}
+
+.toc-action-item:last-child {
+  margin-bottom: 0;
+}
+
+.toc-action-link {
+  @apply text-neutral-600 transition-colors duration-200;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-action-link:hover {
+  @apply text-neutral-900;
+}
+
+.toc-action-link[data-active="true"] {
+  @apply text-neutral-900 font-semibold;
+}
+
+.toc-action-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.toc-action-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Ensure all Lucide icons follow the proper format */
+.lucide,
+svg.lucide,
+[class*="lucide-"] svg {
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+/* Ensure Mintlify Icon component renders Lucide icons correctly */
+svg[class*="lucide"] {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+.toc-action-checkmark {
+  animation: checkmarkFadeIn 0.3s ease-in-out;
+}
+
+@keyframes checkmarkFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc-action-link {
+    @apply text-neutral-400;
+  }
+  
+  .toc-action-link:hover,
+  .toc-action-link[data-active="true"] {
+    @apply text-neutral-100;
+  }
+}
+
+.toc-actions-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important; 
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+  list-style: none !important;
+  display: list-item !important;
+  min-height: 1px !important;
+}
+
+
+
+/* ============================================
    PROSE IMAGES
    ============================================ */
 
 .prose :where(img):not(:where([class~=not-prose],[class~=not-prose] *)) {
   margin: 0;
+}
+
+/* ============================================
+   LEARN MORE CARD GROUP - OVERFLOW
+   ============================================ */
+
+.mint-grid,
+.grid.mt-6 {
+  overflow: visible !important;
+}
+
+/* ============================================
+   CONCEPTS PAGE - HEADING ALIGNMENT
+   ============================================ */
+
+/* Remove top margin from h3 headings in concepts page sections */
+section.mb-12 h3.mt-0 {
+  margin-top: 0 !important;
 }

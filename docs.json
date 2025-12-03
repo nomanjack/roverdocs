@@ -71,23 +71,5 @@
       "label": "Rover.inc",
       "href": "https://rover.inc"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/roverinc",
-      "linkedin": "https://linkedin.com/company/roverinc"
-    }
   }
 }
