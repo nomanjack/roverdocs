@@ -12,6 +12,12 @@
     "default": "light",
     "strict": true
   },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/overview/rover"
+    }
+  ],
   "navigation": {
     "groups": [
       {
