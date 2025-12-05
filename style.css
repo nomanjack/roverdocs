@@ -20,15 +20,6 @@
   @apply bg-neutral-100 border-black/[0.12];
 }
 
-@media (prefers-color-scheme: dark) {
-  .card {
-    @apply bg-neutral-900 border-neutral-100/[0.08];
-  }
-  
-  .card:hover {
-    @apply bg-neutral-800 border-neutral-100/[0.12];
-  }
-}
 
 /* Override Mintlify card borders */
 .card-group .card {
@@ -39,15 +30,6 @@
   @apply border-black/[0.12];
 }
 
-@media (prefers-color-scheme: dark) {
-  .card-group .card {
-    @apply border-neutral-100/[0.08] !important;
-  }
-  
-  .card-group .card:hover {
-    @apply border-neutral-100/[0.12] !important;
-  }
-}
 
 /* Card icon stroke width - thinner */
 .card-group .card .icon,
@@ -106,17 +88,6 @@ a.learn-more-card:focus,
   border-bottom: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  a.learn-more-card,
-  .learn-more-card {
-    background-color: #ffffff !important;
-  }
-  
-  a.learn-more-card:hover,
-  .learn-more-card:hover {
-    background-color: #fafafa !important;
-  }
-}
 
 .learn-more-card svg,
 .learn-more-card .icon {
@@ -124,12 +95,6 @@ a.learn-more-card:focus,
   color: #111827;
 }
 
-@media (prefers-color-scheme: dark) {
-  .learn-more-card svg,
-  .learn-more-card .icon {
-    color: #e4e4e4;
-  }
-}
 
 /* ============================================
    LINKS
@@ -139,11 +104,6 @@ a {
   @apply text-neutral-900 no-underline transition-opacity duration-200;
 }
 
-@media (prefers-color-scheme: dark) {
-  a {
-    @apply text-neutral-100;
-  }
-}
 
 a:hover {
   @apply opacity-70;
@@ -218,31 +178,11 @@ span.cursor-pointer {
   font-size: 18px !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  h1 {
-    @apply text-neutral-50;
-  }
-  
-  h2, h3, h4, h5, h6 {
-    @apply text-neutral-50;
-  }
-  
-  h2,
-  h3,
-  span.cursor-pointer {
-    font-size: 18px !important;
-  }
-}
 
 #page-title {
   @apply text-neutral-900;
 }
 
-@media (prefers-color-scheme: dark) {
-  #page-title {
-    @apply text-neutral-50;
-  }
-}
 
 /* Change all bold to semibold */
 strong,
@@ -284,33 +224,6 @@ nav[aria-label="Sidebar"] {
   background: #fafafa !important;
 } */
 
-@media (prefers-color-scheme: dark) {
-  #navbar {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-  }
-  
-  nav[role="navigation"],
-  header,
-  [data-navbar],
-  .navbar {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-  }
-  
-  /* #sidebar {
-    background-color: #fafafa !important;
-    background: #fafafa !important;
-  } */
-  
-  /* aside[role="complementary"],
-  [data-sidebar],
-  .sidebar,
-  nav[aria-label="Sidebar"] {
-    background-color: #fafafa !important;
-    background: #fafafa !important;
-  } */
-}
 
 /* ============================================
    BORDERS - 8% opacity throughout
@@ -320,31 +233,27 @@ nav[aria-label="Sidebar"] {
   @apply border-b border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  #navbar {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 #sidebar {
-  @apply border-r border-black/[0.08];
+  @apply border-black/[0.08];
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+  width: 280px !important;
+  position: relative !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  #sidebar {
-    @apply border-neutral-100/[0.08];
-  }
+#sidebar-content {
+  min-width: 280px !important;
+  max-width: 280px !important;
+  width: 280px !important;
 }
+
 
 #table-of-contents {
   @apply border-l border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  #table-of-contents {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 /* Hide "On this page" heading only - using Mintlify identifiers */
 [data-table-of-contents] > h3:first-child,
@@ -388,21 +297,29 @@ aside > div:first-child button {
   @apply border-t border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  #footer {
-    @apply border-neutral-100/[0.08];
-  }
+/* Hide "Powered by Mintlify" text */
+#footer a[href*="mintlify"],
+#footer a[href*="Mintlify"],
+#footer a[href*="mintlify.com"],
+footer a[href*="mintlify"],
+footer a[href*="Mintlify"],
+footer a[href*="mintlify.com"],
+[data-footer] a[href*="mintlify"],
+[data-footer] a[href*="Mintlify"],
+[data-footer] a[href*="mintlify.com"],
+#footer *[class*="mintlify"],
+#footer *[class*="Mintlify"],
+footer *[class*="mintlify"],
+footer *[class*="Mintlify"] {
+  display: none !important;
+  visibility: hidden !important;
 }
+
 
 hr {
   @apply border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  hr {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 /* ============================================
    TABLES
@@ -412,31 +329,16 @@ thead {
   @apply bg-neutral-50 border-b border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  thead {
-    @apply bg-neutral-900 border-neutral-100/[0.08];
-  }
-}
 
 tbody tr {
   @apply border-b border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  tbody tr {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 tbody tr:hover {
   @apply bg-neutral-50;
 }
 
-@media (prefers-color-scheme: dark) {
-  tbody tr:hover {
-    @apply bg-neutral-900;
-  }
-}
 
 /* ============================================
    CODE BLOCKS
@@ -446,21 +348,11 @@ code:not([class*="language-"]) {
   @apply bg-neutral-100 text-neutral-900 px-1 py-0.5 rounded text-sm;
 }
 
-@media (prefers-color-scheme: dark) {
-  code:not([class*="language-"]) {
-    @apply bg-neutral-800 text-neutral-100;
-  }
-}
 
 .code-block {
   @apply bg-neutral-50 border border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  .code-block {
-    @apply bg-neutral-950 border-neutral-100/[0.08];
-  }
-}
 
 /* ============================================
    BUTTONS
@@ -474,30 +366,62 @@ code:not([class*="language-"]) {
   @apply bg-neutral-800 border-neutral-800;
 }
 
-@media (prefers-color-scheme: dark) {
-  #topbar-cta-button {
-    @apply bg-neutral-100 text-neutral-900 border-neutral-100;
-  }
-  
-  #topbar-cta-button:hover {
-    @apply bg-neutral-200 border-neutral-200;
-  }
-}
 
-/* Navbar primary button */
+/* Navbar primary button - styled like WaitlistButton */
 .navbar-primary-button,
 .navbar-primary-button a,
 [data-primary-button],
-#navbar a[href*="rover.inc"] {
-  @apply transition-opacity duration-200;
+#navbar a[href*="rover.inc"],
+#navbar button[type="button"] a,
+#navbar a[href="https://rover.inc"] {
+  @apply inline-flex items-center;
+  @apply py-2 rounded-md text-sm font-medium;
+  @apply border no-underline;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  background-color: #E4E4E4 !important;
+  border-color: #E4E4E4 !important;
+  border-radius: 6px !important;
+  color: #121212 !important;
+  max-height: 40px !important;
+}
+
+/* Hide arrow icons in Join Beta button */
+.navbar-primary-button svg,
+.navbar-primary-button a svg,
+[data-primary-button] svg,
+#navbar a[href*="rover.inc"] svg,
+#navbar button[type="button"] a svg,
+#navbar a[href="https://rover.inc"] svg,
+.navbar-primary-button .icon,
+.navbar-primary-button a .icon,
+[data-primary-button] .icon,
+#navbar a[href*="rover.inc"] .icon,
+#navbar button[type="button"] a .icon,
+#navbar a[href="https://rover.inc"] .icon {
+  display: none !important;
 }
 
 .navbar-primary-button:hover,
+.navbar-primary-button:hover a,
 .navbar-primary-button a:hover,
 [data-primary-button]:hover,
-#navbar a[href*="rover.inc"]:hover {
-  opacity: 0.8;
+[data-primary-button]:hover a,
+#navbar a[href*="rover.inc"]:hover,
+#navbar button[type="button"]:hover a,
+#navbar button[type="button"] a:hover,
+#navbar a[href="https://rover.inc"]:hover,
+.navbar-primary-button:hover *,
+.navbar-primary-button a:hover *,
+[data-primary-button]:hover *,
+#navbar a[href*="rover.inc"]:hover *,
+#navbar button[type="button"] a:hover *,
+#navbar a[href="https://rover.inc"]:hover * {
+  background-color: #E4E4E4 !important;
+  border-color: #E4E4E4 !important;
+  color: #121212 !important;
 }
+
 
 /* ============================================
    SEARCH
@@ -507,21 +431,11 @@ code:not([class*="language-"]) {
   @apply bg-neutral-50 border border-black/[0.08] text-neutral-900;
 }
 
-@media (prefers-color-scheme: dark) {
-  #search-input {
-    @apply bg-neutral-900 border-neutral-100/[0.08] text-neutral-100;
-  }
-}
 
 #search-input:focus {
   @apply outline-2 outline-black/[0.12] outline-offset-2 border-black/[0.12];
 }
 
-@media (prefers-color-scheme: dark) {
-  #search-input:focus {
-    @apply outline-neutral-100/[0.12] border-neutral-100/[0.12];
-  }
-}
 
 /* ============================================
    CALLOUTS & ALERTS
@@ -531,11 +445,6 @@ code:not([class*="language-"]) {
   @apply bg-neutral-50 border-l-4 border-black/[0.08];
 }
 
-@media (prefers-color-scheme: dark) {
-  .callout {
-    @apply bg-neutral-900 border-neutral-100/[0.08];
-  }
-}
 
 /* ============================================
    ACCORDIONS
@@ -545,11 +454,6 @@ code:not([class*="language-"]) {
   @apply border border-black/[0.08] rounded-lg;
 }
 
-@media (prefers-color-scheme: dark) {
-  .accordion {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 /* ============================================
    TABS
@@ -571,35 +475,18 @@ code:not([class*="language-"]) {
   @apply border-t border-black/[0.08] mt-12 pt-8;
 }
 
-@media (prefers-color-scheme: dark) {
-  #pagination {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 .pagination-prev,
 .pagination-next {
   @apply border border-black/[0.08] rounded-lg p-4 transition-all duration-200;
 }
 
-@media (prefers-color-scheme: dark) {
-  .pagination-prev,
-  .pagination-next {
-    @apply border-neutral-100/[0.08];
-  }
-}
 
 .pagination-prev:hover,
 .pagination-next:hover {
   @apply bg-neutral-50 border-black/[0.12];
 }
 
-@media (prefers-color-scheme: dark) {
-  .pagination-prev:hover,
-  .pagination-next:hover {
-    @apply bg-neutral-900 border-neutral-100/[0.12];
-  }
-}
 
 /* ============================================
    TABLE OF CONTENTS
@@ -609,23 +496,12 @@ code:not([class*="language-"]) {
   @apply text-neutral-600 transition-colors duration-200;
 }
 
-@media (prefers-color-scheme: dark) {
-  .toc-item {
-    @apply text-neutral-400;
-  }
-}
 
 .toc-item:hover,
 .toc-item[data-active="true"] {
   @apply text-neutral-900;
 }
 
-@media (prefers-color-scheme: dark) {
-  .toc-item:hover,
-  .toc-item[data-active="true"] {
-    @apply text-neutral-100;
-  }
-}
 
 /* ============================================
    SIDEBAR
@@ -635,6 +511,9 @@ code:not([class*="language-"]) {
 #navigation-items {
   background-color: #fafafa !important;
   background: #fafafa !important;
+  min-width: 279px !important;
+  max-width: 279px !important;
+  width: 279px !important;
 }
 
 /* #sidebar,
@@ -646,34 +525,16 @@ code:not([class*="language-"]) {
   background: #fafafa !important;
 } */
 
-@media (prefers-color-scheme: dark) {
-  #navigation-items {
-    background-color: #fafafa !important;
-    background: #fafafa !important;
-  }
-  
-  /* Duplicate sidebar background rules removed for clarity. Sidebar background is handled globally; no need to redeclare here. */
-}
 
 .sidebar-group-header {
   @apply text-neutral-600 font-medium uppercase text-xs tracking-wider;
 }
 
-@media (prefers-color-scheme: dark) {
-  .sidebar-group-header {
-    @apply text-neutral-400;
-  }
-}
 
 .sidebar-title {
   @apply text-neutral-900 transition-opacity duration-200;
 }
 
-@media (prefers-color-scheme: dark) {
-  .sidebar-title {
-    @apply text-neutral-100;
-  }
-}
 
 .sidebar-title:hover {
   @apply opacity-70;
@@ -681,6 +542,98 @@ code:not([class*="language-"]) {
 
 .sidebar-title[data-active="true"] {
   @apply font-semibold;
+}
+
+/* Custom sidebar bottom section */
+.sidebar-bottom-section {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  min-width: 279px !important;
+  max-width: 279px !important;
+  width: 279px !important;
+  background-color: #fafafa !important;
+  z-index: 1000 !important;
+  padding: 0 !important;
+}
+
+.sidebar-bottom-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  margin: 0 !important;
+}
+
+.sidebar-bottom-content {
+  padding: 1.5rem 1.75rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ensure cloned Contact group maintains sidebar styling */
+.sidebar-bottom-content .sidebar-group,
+.sidebar-bottom-content [data-group],
+.sidebar-bottom-content > div {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sidebar-bottom-content .sidebar-group-header {
+  margin-bottom: 0.5rem !important;
+  font-size: 14px !important;
+}
+
+/* Ensure Contact section items match other nav items font size (14px) */
+.sidebar-bottom-content .sidebar-title,
+.sidebar-bottom-content a:not(.sidebar-group-header),
+.sidebar-bottom-content a.sidebar-title,
+.sidebar-bottom-content .sidebar-group a,
+.sidebar-bottom-content [class*="sidebar"] a:not(.sidebar-group-header),
+.sidebar-bottom-content a[href*="contact"],
+.sidebar-bottom-content a[href*="Contact"],
+.sidebar-bottom-content a[href*="book"],
+.sidebar-bottom-content a[href*="email"],
+.sidebar-bottom-content a[href*="slack"],
+.sidebar-bottom-content > div > div a,
+.sidebar-bottom-content > div a:not(.sidebar-group-header) {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Override the 15px media query for Contact section */
+@media (min-width: 768px) {
+  .sidebar-bottom-content .sidebar-title,
+  .sidebar-bottom-content a:not(.sidebar-group-header),
+  .sidebar-bottom-content a.sidebar-title,
+  .sidebar-bottom-content .sidebar-group a,
+  .sidebar-bottom-content [class*="sidebar"] a:not(.sidebar-group-header),
+  .sidebar-bottom-content a[href*="contact"],
+  .sidebar-bottom-content a[href*="Contact"],
+  .sidebar-bottom-content a[href*="book"],
+  .sidebar-bottom-content a[href*="email"],
+  .sidebar-bottom-content a[href*="slack"],
+  .sidebar-bottom-content > div > div a,
+  .sidebar-bottom-content > div a:not(.sidebar-group-header) {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+
+/* Hide sidebar collapse/toggle button */
+#sidebar button[aria-label*="collapse" i],
+#sidebar button[aria-label*="toggle" i],
+#sidebar button[aria-label*="sidebar" i],
+#sidebar button[title*="collapse" i],
+#sidebar button[title*="toggle" i],
+#sidebar-content button[aria-label*="collapse" i],
+#sidebar-content button[aria-label*="toggle" i],
+#sidebar-content button[aria-label*="sidebar" i],
+button[aria-label*="collapse sidebar" i],
+button[aria-label*="toggle sidebar" i],
+[data-sidebar-toggle],
+[data-sidebar-collapse],
+.sidebar-toggle,
+.sidebar-collapse {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 /* ============================================
@@ -691,11 +644,6 @@ code:not([class*="language-"]) {
   @apply outline-2 outline-black/[0.12] outline-offset-2;
 }
 
-@media (prefers-color-scheme: dark) {
-  *:focus-visible {
-    @apply outline-neutral-100/[0.12];
-  }
-}
 
 /* ============================================
    TEXT SELECTION
@@ -705,11 +653,6 @@ code:not([class*="language-"]) {
   @apply bg-neutral-200 text-neutral-900;
 }
 
-@media (prefers-color-scheme: dark) {
-  ::selection {
-    @apply bg-neutral-800 text-neutral-100;
-  }
-}
 
 /* ============================================
    TOC ACTIONS (Copy Page & Share Feedback)
@@ -785,16 +728,6 @@ svg[class*="lucide"] {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .toc-action-link {
-    @apply text-neutral-400;
-  }
-  
-  .toc-action-link:hover,
-  .toc-action-link[data-active="true"] {
-    @apply text-neutral-100;
-  }
-}
 
 .toc-actions-divider {
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important; 
@@ -843,4 +776,11 @@ img.rounded,
 /* Remove top margin from h3 headings in concepts page sections */
 section.mb-12 h3.mt-0 {
   margin-top: 0 !important;
+}
+
+
+.sidebar-group-icon svg,
+.icon svg {
+  width: 32px !important;
+  height: 32px !important;
 }

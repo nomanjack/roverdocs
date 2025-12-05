@@ -1,10 +1,14 @@
 ---
 title: "Welcome"
+icon: "book"
+
 ---
 
 <br/>
 
 import { Container, Title, LearnMoreCard, LearnMoreCardGroup } from '/snippets/utility.mdx';
+import { SimpleCard } from '/snippets/simple-card.mdx';
+import { SimpleCardGrid } from '/snippets/simple-card-grid.mdx';
 
 
 Rover is an all-in-one on-chain information engine that enables you to search, monitor, and aggregate blockchain activity in real-time, transforming complex data into intuitive, actionable insights for everyone.
@@ -27,15 +31,15 @@ The beta release is focused on Ethereum. We offer 1 month of historical data and
 
         <div className="bg-neutral-50 dark:bg-neutral-800 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
           <div className="flex-1 px-3 py-1.5 flex items-center">
-            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Name</span>
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm leading-5 tracking-wide">Name</span>
           </div>
 
           <div className="flex-1 px-3 py-1.5 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
-            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Timeline</span>
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm leading-5 tracking-wide">Timeline</span>
           </div>
 
           <div className="w-28 px-3 py-1.5 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
-            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5">Status</span>
+            <span className="text-neutral-600 dark:text-neutral-400 text-sm leading-5 tracking-wide">Status</span>
           </div>
         </div>
 
@@ -43,11 +47,19 @@ The beta release is focused on Ethereum. We offer 1 month of historical data and
 
         <div className="bg-neutral-100 dark:bg-neutral-900 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
           <div className="flex-1 px-3 py-2 flex items-center">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0" style={{ marginRight: '8px' }}>
+              <path d="M7.99939 0.209717L12.7353 8.03557L8.01693 6.01893L7.99939 0.209717Z" fill="#2F3030"/>
+              <path d="M3.27649 8.03557L7.99943 0.209717L8.01697 6.01893L3.27649 8.03557Z" fill="#828384"/>
+              <path d="M7.99943 10.921L3.27649 8.03544L8.01697 6.0188L7.99943 10.921Z" fill="#343535"/>
+              <path d="M12.7353 8.03544L8.01693 6.0188L7.99939 10.921L12.7353 8.03544Z" fill="#131313"/>
+              <path d="M7.99939 11.9146L12.7353 9.10718L7.99939 15.7802V11.9146Z" fill="#2F3030"/>
+              <path d="M7.99943 11.9146L3.27649 9.10718L7.99943 15.7802V11.9146Z" fill="#828384"/>
+            </svg>
             <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Ethereum</span>
           </div>
 
           <div className="flex-1 px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
-            <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">October 2025 → Present</span>
+            <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">October 2025 → Present</span>
           </div>
 
           <div className="w-28 px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
@@ -57,17 +69,20 @@ The beta release is focused on Ethereum. We offer 1 month of historical data and
 
         {/* Row: Base */}
 
-        <div className="bg-neutral-100 dark:bg-neutral-900 border-b border-black/[0.08] dark:border-neutral-100/[0.08] flex">
+        <div className="bg-neutral-100 dark:bg-neutral-900 flex">
           <div className="flex-1 px-3 py-2 flex items-center">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0" style={{ marginRight: '10px' }}>
+              <path d="M1 2.106C1 1.72717 1 1.53775 1.07138 1.39204C1.13973 1.25253 1.25253 1.13973 1.39204 1.07138C1.53775 1 1.72717 1 2.106 1H13.894C14.2728 1 14.4623 1 14.6079 1.07138C14.7474 1.13973 14.8603 1.25253 14.9286 1.39204C15 1.53775 15 1.72717 15 2.106V13.894C15 14.2728 15 14.4623 14.9286 14.6079C14.8603 14.7474 14.7474 14.8603 14.6079 14.9286C14.4623 15 14.2728 15 13.894 15H2.106C1.72717 15 1.53775 15 1.39204 14.9286C1.25253 14.8603 1.13973 14.7474 1.07138 14.6079C1 14.4623 1 14.2728 1 13.894V2.106Z" fill="#0000FF"/>
+            </svg>
             <span className="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-5">Base</span>
           </div>
 
           <div className="flex-1 px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
-            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 opacity-70">Coming Soon</span>
+            <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">Coming Soon</span>
           </div>
 
           <div className="w-28 px-3 py-2 border-l border-black/[0.08] dark:border-neutral-100/[0.08] flex items-center">
-            <span className="text-neutral-600 dark:text-neutral-400 text-sm font-medium leading-5 opacity-70">-</span>
+            <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-5">-</span>
           </div>
         </div>
       </div>
@@ -75,13 +90,49 @@ The beta release is focused on Ethereum. We offer 1 month of historical data and
   </div>
 </Container>
 
+
+--- 
 ## Learn more
 
-<LearnMoreCardGroup cols={3}>
-  <LearnMoreCard title="Start Guide" icon="book-open" href="https://rover.inc" />
-  <LearnMoreCard title="Changelog" icon="sparkles" href="https://rover.inc" />
-  <LearnMoreCard title="Concepts" icon="lightbulb" href="https://rover.inc" />
-  <LearnMoreCard title="Examples" icon="circle-info" href="https://rover.inc" />
-  <LearnMoreCard title="Support" icon="headset" href="https://rover.inc" />
-  <LearnMoreCard title="Book Live Demo" icon="video" href="https://rover.inc" />
-</LearnMoreCardGroup>
+<br/>
+
+<SimpleCardGrid maxCols={3}>
+  <SimpleCard
+    href="https://rover.inc"
+    icon="book-open"
+    title="Start Guide"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+  <SimpleCard
+    href="https://rover.inc"
+    icon="sparkle"
+    title="Changelog"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+  <SimpleCard
+    href="https://rover.inc"
+    icon="lightbulb"
+    title="Concepts"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+
+   <SimpleCard
+    href="https://rover.inc"
+    icon="circle-question"
+    title="Examples"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+
+   <SimpleCard
+    href="https://rover.inc"
+    icon="headset"
+    title="Support"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+   <SimpleCard
+    href="https://rover.inc"
+    icon="calendar"
+    title="Book Live Demo"
+    description="Learn how to use the app and follow best practices for software building"
+  />
+</SimpleCardGrid>

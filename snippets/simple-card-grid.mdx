@@ -1,0 +1,15 @@
+import React from 'react';
+
+export const SimpleCardGrid = ({ children, maxCols = 3 }) => {
+  return (
+    <div
+      className="w-full grid gap-3"
+      style={{
+        gridTemplateColumns: `repeat(${maxCols}, minmax(0, 1fr))`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+

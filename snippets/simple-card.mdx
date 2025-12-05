@@ -1,0 +1,22 @@
+import React from 'react';
+
+export const SimpleCard = ({ title, description, href = 'https://rover.inc', icon = 'home' }) => {
+  return (
+    <a
+      href={href}
+      className="bg-white rounded-lg outline outline-1 outline-offset-[-0.5px] outline-black/[0.08] flex flex-col justify-start items-start hover:bg-[#fafafa] shadow-none hover:shadow-none transition-colors duration-200 no-underline w-full border-b-0"
+      style={{ borderBottom: 'none' }}
+    >
+      <div className="self-stretch px-4 pt-4 pb-20 inline-flex justify-start items-center gap-2">
+        <div className="w-4 h-4 flex items-center justify-center">
+          <Icon icon={icon} size="16" />
+        </div>
+      </div>
+      <div className="self-stretch px-4 pt-4 pb-4 border-t border-black/10 flex flex-col justify-center items-start gap-1">
+        <div className="text-neutral-900 text-[14px] font-medium leading-5">{title}</div>
+        <div className="text-neutral-700 text-[13px] font-normal leading-5">{description}</div>
+      </div>
+    </a>
+  );
+};
+

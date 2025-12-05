@@ -51,8 +51,7 @@
       {
         "group": "Contact",
         "pages": [
-          "contact/talk-to-us",
-          "contact/slack",
+          "contact/book-a-demo",
           "contact/email"
         ]
       }
@@ -66,16 +65,14 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@rover.inc"
-      }
-    ],
+  
     "primary": {
       "type": "button",
-      "label": "Rover.inc",
+      "label": "Join Beta",
       "href": "https://rover.inc"
     }
   }
+  
 }
+
+

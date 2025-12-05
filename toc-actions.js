@@ -1,4 +1,4 @@
-// Inject "Copy Page" and "Share feedback" buttons below table of contents
+// Inject "Copy Page" button below table of contents
 (function() {
   function injectTocActions() {
     // Find the table of contents list/container
@@ -135,85 +135,11 @@
     
     copyItem.appendChild(copyLink);
     
-    // Create "Share feedback" item styled like TOC item
-    const feedbackItem = document.createElement('li');
-    feedbackItem.className = 'toc-item toc-action-item';
-    const feedbackLink = document.createElement('a');
-    feedbackLink.href = '#';
-    feedbackLink.className = 'toc-action-link';
-    feedbackLink.style.cursor = 'pointer';
-    feedbackLink.style.display = 'flex';
-    feedbackLink.style.alignItems = 'center';
-    feedbackLink.style.gap = '0.5rem';
-    
-    // Create feedback icon using Lucide's message-square
-    const feedbackIcon = document.createElement('span');
-    feedbackIcon.className = 'toc-action-icon';
-    // Lucide message-square icon SVG (14x14) - matching Lucide format
-    feedbackIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
-    
-    // Create checkmark icon (hidden initially) using Lucide's check format
-    const feedbackCheckIcon = document.createElement('span');
-    feedbackCheckIcon.className = 'toc-action-icon toc-action-checkmark';
-    feedbackCheckIcon.style.display = 'none';
-    feedbackCheckIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>';
-    
-    const feedbackText = document.createElement('span');
-    feedbackText.textContent = 'Share feedback';
-    
-    feedbackLink.appendChild(feedbackIcon);
-    feedbackLink.appendChild(feedbackCheckIcon);
-    feedbackLink.appendChild(feedbackText);
-    
-    feedbackLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      // Trigger Mintlify's feedback form
-      const feedbackTrigger = document.querySelector('[data-feedback-trigger], button[aria-label*="feedback" i], [data-feedback-button]');
-      
-      if (feedbackTrigger) {
-        feedbackTrigger.click();
-      } else {
-        // Try to find feedback thumbs buttons and click the feedback area
-        const thumbsUp = document.querySelector('[data-feedback-thumbs-up], button[aria-label*="thumbs up" i]');
-        const thumbsDown = document.querySelector('[data-feedback-thumbs-down], button[aria-label*="thumbs down" i]');
-        const feedbackArea = document.querySelector('[data-feedback-area], .feedback-area, [class*="feedback"]');
-        
-        if (thumbsUp || thumbsDown || feedbackArea) {
-          (thumbsUp || thumbsDown || feedbackArea)?.click();
-        } else {
-          // Fallback: try to find any feedback-related element
-          const feedbackElements = document.querySelectorAll('button, [role="button"], [data-feedback]');
-          for (let el of feedbackElements) {
-            const text = (el.textContent || '').toLowerCase();
-            const ariaLabel = (el.getAttribute('aria-label') || '').toLowerCase();
-            if (text.includes('feedback') || ariaLabel.includes('feedback') || 
-                text.includes('thumbs') || ariaLabel.includes('thumbs')) {
-              el.click();
-              break;
-            }
-          }
-        }
-      }
-      
-      // Animate to checkmark
-      feedbackIcon.style.display = 'none';
-      feedbackCheckIcon.style.display = 'block';
-      feedbackCheckIcon.style.animation = 'checkmarkFadeIn 0.3s ease-in-out';
-      
-      setTimeout(() => {
-        feedbackCheckIcon.style.display = 'none';
-        feedbackIcon.style.display = 'block';
-      }, 2000);
-    });
-    
-    feedbackItem.appendChild(feedbackLink);
-    
     // Insert divider and items into TOC list
     if (tocList.tagName === 'UL' || tocList.querySelector('ul')) {
       const list = tocList.tagName === 'UL' ? tocList : tocList.querySelector('ul');
       list.appendChild(divider);
       list.appendChild(copyItem);
-      list.appendChild(feedbackItem);
     } else {
       // If no ul, create one or append to container
       const list = document.createElement('ul');
@@ -222,7 +148,6 @@
       list.style.margin = '0';
       list.appendChild(divider);
       list.appendChild(copyItem);
-      list.appendChild(feedbackItem);
       tocList.appendChild(list);
     }
   }
